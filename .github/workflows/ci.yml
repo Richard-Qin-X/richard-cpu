@@ -37,7 +37,7 @@ jobs:
         run: cmake -B build -DENABLE_TRACE=OFF
 
       - name: Build
-        run: cmake --build build -j$(nproc)
+        run: cmake --build build --verbose -j$(nproc)
 
       - name: Test
         run: ctest --test-dir build --output-on-failure --timeout 120
